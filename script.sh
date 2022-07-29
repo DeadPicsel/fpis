@@ -18,9 +18,9 @@ WHITE="\e[97m"
 YELLOW="\e[33m"
 ENDCOLOR="\e[0m"
 
-printf "${LRED}#############################################${ENDCOLOR}\n"
+printf "${LYELLOW}#############################################${ENDCOLOR}\n"
 printf "${RED}Fedora Post Installation Script by DeadPicsel\n"
-printf "${LRED}#############################################${ENDCOLOR}\n"
+printf "${LYELLOW}#############################################${ENDCOLOR}\n"
 
 # Move Working Directory
 cd ~
@@ -49,8 +49,8 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-sudo yum update
-sudo yum upgrade
+sudo dnf update
+sudo dnf upgrade
     printf "${GREEN}Basic System Update Completed!\n"
 else
     printf "${RED}Basic System Update Not Completed!\n"
@@ -63,12 +63,12 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-sudo yum install -y guake
-sudo yum install -y p7zip-full
-sudo yum install -y snapd
-sudo yum install -y unrar
-sudo yum install -y wget
-sudo yum install -y wine
+sudo dnf install guake
+sudo dnf install p7zip-full
+sudo dnf install snapd
+sudo dnf install unrar
+sudo dnf install wget
+sudo dnf install wine
     printf "${GREEN}System Applications Installed!\n"
 else
     printf "${RED}System Applications Not Installed!\n"
@@ -81,7 +81,7 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-sudo yum install -y gimp
+sudo dnf install gimp
     printf "${GREEN}Graphics Applications Installed!\n"
 else
     printf "${RED}Graphics Applications Not Installed!\n"
@@ -94,9 +94,9 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-sudo yum install google-chrome
-sudo yum install deluge
-sudo yum install filezilla
+sudo dnf install google-chrome
+sudo dnf install deluge
+sudo dnf install filezilla
     printf "${GREEN}Internet Applications Installed!\n"
 else
     printf "${RED}Internet Applications Not Installed!\n"
@@ -109,8 +109,8 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-sudo yum install audacious
-sudo apt-get install vlc
+sudo dnf install audacious
+sudo dnf install vlc
     printf "${GREEN}Multimedia Applications Installed!\n"
 else
     printf "${RED}Multimedia Applications Not Installed!\n"
