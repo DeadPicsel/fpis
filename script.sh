@@ -64,7 +64,7 @@ answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
 sudo dnf install guake
-sudo dnf install p7zip-full
+sudo dnf install p7zip
 sudo dnf install snapd
 sudo dnf install unrar
 sudo dnf install wget
